@@ -5,6 +5,10 @@ const display=document.querySelector('#display');
 const onScreen=display.querySelector('p');
 const equalButton=document.querySelector(`[data-value='eq']`).parentNode;
 equalButton.addEventListener('click',equal);
+const acButton=document.querySelector(`[data-value='ac']`).parentNode;
+acButton.addEventListener('click',clear);
+const delButton=document.querySelector(`[data-value='del']`).parentNode;
+delButton.addEventListener('click',delChar);
 let screenContent="";
 let data=[];
 let number='';
@@ -94,7 +98,7 @@ function printOnScreen(a){
             screenContent='';
            
             onScreen.textContent=screenContent;
-            data.length==3?operate(data):0;   
+            if(data.length==3){operate(data);onScreen.textContent=data[0]}   
             data.push(span.getAttribute('data-value'));
            
             
@@ -121,6 +125,15 @@ function equal(){
     console.log(data);
     }    
 
+}
+function clear(){
+    data=[];
+    onScreen.textContent='';
+    screenContent='';
+}
+function delChar(){
+    screenContent= screenContent.slice(0,screenContent.length-1);
+    onScreen.textContent=screenContent;
 }
         
     /*
