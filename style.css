@@ -1,7 +1,9 @@
 #calculator{
     display: grid;
+    border: 2px solid black;
     width: 500px;
     height: 500px;
+    margin:50px auto;
     grid-template-columns:repeat(5,1fr) ;
     grid-template-rows: repeat(5,1fr);
     grid-template-areas: 
@@ -17,6 +19,7 @@
     text-align: end;
     background-color: rgb(85, 223, 216);
     grid-area: display;
+    border: 2px solid black;
     /*grid-row: 1/2;
     grid-column: 1/6;*/
 }
