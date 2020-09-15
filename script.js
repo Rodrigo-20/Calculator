@@ -89,8 +89,6 @@ function operate(calculation){
 function printOnScreen(a){
     if(typeof a=='object'){ 
         let span;
-        console.log(a);  
-        console.log(a.keyCode);
         a.type=='click'?  span=this.querySelector('span'):0;
         a.type=='keydown'? span=document.querySelector(`[data-key='${a.key}']`):0;
         a.code=='Backspace'?clear():0;
@@ -187,8 +185,6 @@ function delChar(){//delete the last number of the screen
 const buttonNumbers=document.querySelectorAll(`[data-onScreen='yes']`);//select the spans elements
 console.log(buttonNumbers[0].parentNode);
 buttonNumbers.forEach(button=>button.parentNode.addEventListener('click',printOnScreen));//add the event listener to the div element partent of the span
-const keys=document.querySelectorAll(`[data-key]`);
-
 window.addEventListener('keydown',printOnScreen);
 
 
